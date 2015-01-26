@@ -1,0 +1,141 @@
+// Grid stuff and holders for 'modules'
+
+header {
+  @include pad();
+  padding-top: 100px;
+  padding-bottom: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 0;
+
+  @include media($mobile) {
+    background-image: $head-bkg-img;
+  }
+
+  h1 {
+    @include font-size(40, 54);
+    color: $header-font-color-reverse;
+    text-shadow: $shadow-inset-dk;
+    text-align: center;
+    margin-bottom: 0;
+
+    @include media($mobile) {
+      margin-bottom: 60px;
+    }
+  }
+}
+section {
+  border-top: 10px solid $color-accent-1;
+  padding: 80px 0;
+
+  &:first-of-type {
+    border-top: none;
+    padding-top: 90px;
+  }
+  &.b-clear {
+    background-image: none;
+  }
+  &.b-white {
+    background: #fff;
+  }
+  &.b-med-lines {
+    background-color: #EBF5F2;
+    background-image: $main-bkg-img;
+  }
+  &.b-dark {
+    background: #3D9198;
+    background-image: $main-bkg-img, linear-gradient(-90deg, #387C95 0%, #3D9198 100%);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p
+    {
+      color: $header-font-color-reverse;
+      text-shadow: $shadow-inset-dk;
+    }
+  }
+}
+
+.outer-container {
+  @include outer-container();
+
+  @include media($mobile) {
+    @include pad();
+  }
+
+  .panel { // panel divs
+    @include span-columns(8);
+    @include shift(2);
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include shift(0);
+    }
+  }
+}
+
+.full-width {
+  @include span-columns(12);
+}
+
+nav {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  display: block;
+  text-shadow: $shadow-inset-dk;
+  z-index: 100;
+
+  &:after {
+    position: absolute;
+    content: "";
+    display: block;
+    background: rgba(100, 144, 134, 0.74);
+    width: 100%;
+    height: 100%;
+  }
+
+  ul {
+    margin: 0 2%;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  a {
+    float: left;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: $nav-anchor-c;
+    margin: 5px 10px 5px 0;
+    text-align: center;
+    padding-top: 7px;
+    color: #d7d7d7;
+    border: 1px solid darken($nav-anchor-c, 5);
+
+    &.current {
+      border-color: $color-accent-2;
+    }
+
+    &:visited {
+      @extend a;
+    }
+
+    &:hover {
+      opacity: .85;
+    }
+
+    &.quiz-nav {
+      &:before {
+        @include icon(fontawesome,"\f040");
+      }
+    }
+  }
+}

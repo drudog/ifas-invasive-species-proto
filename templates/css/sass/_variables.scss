@@ -1,0 +1,40 @@
+//typog stuff
+
+$main-bkg-img: url("/devifas/templates/img/square-lines-15.png");
+$blockquote-bkg-img: url("/devifas/templates/img/geo-v-rule.svg");
+$head-bkg-img: url("/devifas/templates/img/geo-bkg.svg");
+$body-font: 'PT Sans', 'Helvetica Neue', sans-serif;
+$body-font-color: #3F5E80;
+
+$header-font: 'PT Sans Narrow', 'Helvetica Neue', sans-serif;
+$header-font-color: #8C9DB0;
+$header-font-color-reverse: #fff;
+$shadow-inset: 0 -1px 0 rgba(0,0,0,.4);
+$shadow-inset-dk: 0px -1px 0px 1px rgba(0, 0, 0, 0.3);
+
+$nav-anchor-c: #4E7874;
+$color-accent-1: #AAECDE;
+$color-accent-1lt: lighten($color-accent-1, 14);
+$color-accent-2: #28DCB4;
+$color-button: #fff;
+
+//breakpoints TODO: make another breakpoint to differentiate between phone and iPad vertical. Some page layouts would look good with 2 columns on iPad vertical.
+$mobile: new-breakpoint(max-width 768px 4); // iPad Vertical
+
+
+// Icon font mixin
+@mixin icon($family, $content, $t: 0, $r: 0, $b: 0, $l: 0){
+  content: "#{$content}";
+  padding: #{$t} #{$r} #{$b} #{$l};
+  font-family: "#{$family}";
+  display:inline-block;
+  font-size: 14px;
+}
+
+//rem & line-height mixin
+@mixin font-size($sizeValue: 16, $line: $sizeValue * 1.5) {
+  font-size: ($sizeValue) + px;
+  line-height: ($line) + px;
+  font-size: ($sizeValue / 16) + rem;
+  line-height: ($line / 16) + rem;
+}

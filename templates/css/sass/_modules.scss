@@ -1,0 +1,135 @@
+// Reusable sections go here. Include states ie. '.is-active, .is-hidden'
+
+// -------------------------
+// Content Panels
+// -------------------------
+
+.panel ~ .panel {
+  margin-top: 3em;
+}
+.panel {
+  &.panel-text {
+    .main-text-container {
+      @include span-columns(7);
+
+      @include media($mobile) {
+        @include span-columns(4);
+      }
+    }
+
+    .blockquote { // can only be inside a text panel
+      @include span-columns(5);
+      @include pad(0 default);
+      @include omega();
+      @include font-size(22, 31);
+      background-image: $blockquote-bkg-img;
+      background-position: center left;
+      background-repeat: repeat-y;
+      padding-left: 30px;
+      margin: 1em 0;
+      font-style: italic;
+      display: block;
+
+      @include media($mobile) {
+        @include span-columns(4);
+      }
+
+      q {
+        @include font-size(12, 20);
+        font-weight: bold;
+        display: block;
+        font-style: normal;
+        margin-top: 1em;
+      }
+    }
+
+    .round-image { // can only be inside a text panel
+      @include span-columns(5);
+      @include pad(0 default);
+      @include omega();
+
+      @include media($mobile) {
+        @include span-columns(4);
+      }
+
+      .round-image-container {
+        border: 4px solid #FFFFFF;
+        box-shadow: $shadow-inset-dk;
+        border-radius: 50%;
+        position: relative;
+        padding-bottom: 82%;
+        padding-top: 14%;
+        height: 0;
+        overflow: hidden;
+        z-index: 0;
+        margin-bottom: 1em;
+
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+  }
+
+  &.panel-video {
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+      z-index: 0;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+    }
+  }
+
+  &.panel-slideshow,
+  &.panel-large-image // a single image and a slideshow will we treated similarly
+  {
+    figure {
+      img {
+        width: 100%;
+      }
+
+      figcaption {
+        border-bottom: 10px solid $color-accent-1;
+        padding: 10px 30px;
+        background: $color-accent-1lt;
+      }
+    }
+  }
+
+  &.panel-accordion { // for hiding data
+
+  }
+}
+
+.headline {
+  color: $header-font-color;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+.subtext {
+  font-weight: bold;
+
+  p {
+    margin-top: 0;
+  }
+}

@@ -54,9 +54,9 @@
 
 			<!-- if accordion -->
 			<dl>
+				<!-- each accordion -->
 				<dt>Visible part</dt>
 				<dd>Toggled part</dd>
-				<!-- add additional accordions -->
 			</dl>
 			<!-- end accordion -->
 
@@ -64,6 +64,7 @@
 			<!-- if slide show -->
 			<div class="r-slides-nav-container"></div>
 			<ul class="rslides" id="uniqueID">
+				<!-- each slide -->
 				<li>
 					<img src="image/path" alt="image title">
 					<div class="content" style="display: none;">

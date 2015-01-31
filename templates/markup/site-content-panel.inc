@@ -77,7 +77,7 @@
 
 
 			<!-- if button -->
-			<a class="button" href="#">Next Section</a>
+			<a class="button" href="button/link">button text</a>
 			<!-- end button -->
 
 

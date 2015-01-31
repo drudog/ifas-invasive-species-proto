@@ -139,3 +139,23 @@ nav {
     }
   }
 }
+
+footer {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: block;
+    }
+  }
+
+  img {
+    width: 200px;
+    height: auto;
+    margin: 2em auto;
+    display: block;
+  }
+}

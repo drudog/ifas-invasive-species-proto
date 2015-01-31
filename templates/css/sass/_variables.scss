@@ -17,6 +17,7 @@ $color-accent-1: #AAECDE;
 $color-accent-1lt: lighten($color-accent-1, 14);
 $color-accent-2: #28DCB4;
 $color-button: #fff;
+$color-grey-lt: #eee;
 
 //breakpoints TODO: make another breakpoint to differentiate between phone and iPad vertical. Some page layouts would look good with 2 columns on iPad vertical.
 $mobile: new-breakpoint(max-width 768px 4); // iPad Vertical
